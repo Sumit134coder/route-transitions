@@ -8,11 +8,9 @@ type PhotoPlaceholderProps = {
 const PhotoPlaceholder = ({ imageSrc, className }: PhotoPlaceholderProps) => {
 
   return (
-    <div
-      className={`relative overflow-hidden bg-gradient-to-br ${className}`}
-    >
-      <Image alt="Test image" src={imageSrc} height={280} width={600}/>
-    </div>
+    <div className="mx-auto w-full place-items-center">
+      <Image alt="Test image" src={imageSrc} height={280} width={600} className="w-auto h-auto max-h-[60vh] rounded-lg"/>
+</div>
   );
 };
 
