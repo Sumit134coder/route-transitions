@@ -28,9 +28,9 @@ const FOOTER_LINKS: FooterLinks = {
 };
 
 const PHOTOGRAPHERS = [
-  { initials: "MK", name: "Mia Kern", color: "#8a6e4a" },
-  { initials: "SR", name: "Sam Rivera", color: "#4a6e8a" },
-  { initials: "LC", name: "Lena Cho", color: "#6e4a8a" },
+  { initials: "MK", name: "Mia Kern", className: "bg-chart-1" },
+  { initials: "SR", name: "Sam Rivera", className: "bg-chart-2" },
+  { initials: "LC", name: "Lena Cho", className: "bg-chart-3" },
 ];
 
 const SOCIAL_LINKS = [

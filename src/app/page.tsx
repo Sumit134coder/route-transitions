@@ -8,7 +8,7 @@ import { ViewTransition } from "react";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white pt-14">
+    <div className="min-h-screen bg-background pt-14">
       {/* Controls */}
       <div className="max-w-6xl mx-auto px-6 py-6 flex flex-wrap items-center justify-between gap-4 border-b border-stone-100">
         {/* Photographer filter */}
