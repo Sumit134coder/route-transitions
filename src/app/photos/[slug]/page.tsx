@@ -3,15 +3,19 @@ import Link from "next/link";
 import { galleryData } from "@/lib/constants/data";
 import { ViewTransition } from "react";
 
-const PhotoDetails = async ({ params }: any) => {
+type PhotoDetailsPageProps = {
+  params: Promise<{
+    slug: string | number | undefined;
+  }>;
+};
+
+const PhotoDetails = async ({ params }: PhotoDetailsPageProps) => {
   const { slug } = await params;
 
   const activeImage = galleryData[Number(slug)];
-  console.log({ activeImage });
 
   return (
     <div className="min-h-screen bg-stone-950 pt-14 flex flex-col">
-      {/* Back nav */}
       <div className="max-w-6xl mx-auto px-6 py-4 w-full">
         <Link
           href="/"
@@ -24,17 +28,13 @@ const PhotoDetails = async ({ params }: any) => {
         </Link>
       </div>
 
-      {/* Main image area */}
       <div className="flex-1 flex flex-col items-center justify-center px-6 pb-6">
-        {/* Image with prev/next controls */}
         <div className="relative w-full max-w-4xl">
-          {/* Prev */}
 
           <button className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-10 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur flex items-center justify-center text-white transition-all hover:-translate-x-14 hover:top-1/2">
             ←
           </button>
 
-          {/* Photo */}
           <ViewTransition name={`photo-${slug}`}>
             <div className="rounded-xl overflow-hidden shadow-2xl shadow-black/60">
               <PhotoPlaceholder
@@ -44,14 +44,12 @@ const PhotoDetails = async ({ params }: any) => {
             </div>
           </ViewTransition>
 
-          {/* Next */}
 
           <button className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 z-10 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur flex items-center justify-center text-white transition-all hover:translate-x-14 hover:top-1/2">
             →
           </button>
         </div>
 
-        {/* Photo info */}
         <div className="w-full max-w-4xl mt-6 flex items-end justify-between">
           <div>
             <h1 className="font-serif text-white text-3xl font-bold leading-tight">
@@ -67,7 +65,6 @@ const PhotoDetails = async ({ params }: any) => {
           </div>
         </div>
 
-        {/* Dot progress */}
         <div className="flex items-center gap-1.5 mt-6">
           {galleryData.map((p, index) => (
             <button
