@@ -6,13 +6,13 @@ const navLinks = [
     href: "/",
   },
   {
-    title: "Photographers",
-    href: "/photographers",
+    title: "Collections",
+    href: "/collections/alex-green",
   },
   {
-    title: "Collections",
-    href: "/collections",
-  }
+    title: "About",
+    href: "/about",
+  },
 ];
 
 const active = "/";
