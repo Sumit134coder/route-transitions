@@ -1,36 +1,234 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Art Gallery — View Transitions Demo
 
-## Getting Started
+A modern **Next.js Art Gallery demo** showcasing smooth page and image transitions using the **View Transitions API**.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+* Art gallery listing
+* Artwork detail pages
+* Photographer filtering
+* Search across artwork metadata
+* Sorting by:
+
+  * Title
+  * Year
+  * Photographer
+* URL-based search, filter, and sort state
+* Dynamic artwork detail routes
+* Responsive images using `next/image`
+* View Transitions for smoother navigation
+* Reusable React components
+* Static gallery data
+* Responsive UI
+* System-based light/dark theme
+
+## Tech Stack
+
+* [Next.js](https://nextjs.org/)
+* [React](https://react.dev/)
+* [TypeScript](https://www.typescriptlang.org/)
+* [Tailwind CSS](https://tailwindcss.com/)
+* Next/Image
+* View Transitions API
+* Next.js App Router
+
+## Project Structure
+
+```text
+src/
+├── app/
+│   ├── page.tsx
+│   ├── gallery/
+│   │   ├── page.tsx
+│   │   └── [id]/
+│   │       └── page.tsx
+│   └── ...
+│
+├── components/
+│   ├── PhotoPlaceholder/
+│   ├── SortOptions/
+│   ├── ...
+│
+├── data/
+│   └── galleryData.ts
+│
+├── utils/
+│   ├── getInitials.ts
+│   ├── formatSearchQuery.ts
+│   └── ...
+│
+└── ...
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## View Transitions
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The primary purpose of this project is to demonstrate the **View Transitions API** with Next.js.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+View Transitions allow the browser to animate changes between different UI states instead of immediately replacing the old view.
 
-## Learn More
+### Without View Transitions
 
-To learn more about Next.js, take a look at the following resources:
+```text
+Gallery
+   │
+   │ Click artwork
+   ▼
+Old page disappears
+   │
+   ▼
+New page appears
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### With View Transitions
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```text
+Gallery
+   │
+   │ Click artwork
+   ▼
+Smooth visual transition
+   │
+   ▼
+Artwork Details
+```
 
-## Deploy on Vercel
+This creates a more continuous navigation experience, particularly when moving from an artwork thumbnail to its detail page.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Shared Element Transitions
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The gallery is designed to demonstrate shared element transitions between the gallery card and the artwork detail page.
+
+```text
+Gallery Card
+
+┌─────────────────┐
+│                 │
+│      IMAGE      │
+│                 │
+└─────────────────┘
+         │
+         │ View Transition
+         ▼
+┌──────────────────────┐
+│                      │
+│        IMAGE         │
+│                      │
+│   Artwork Details    │
+│                      │
+└──────────────────────┘
+```
+
+The corresponding elements can be given matching view-transition names so the browser can animate between their positions and sizes.
+
+## Search
+
+The gallery supports searching across multiple artwork fields:
+
+* Title
+* Long description
+* Place
+* Short description
+* Photographer
+
+Example:
+
+```text
+/gallery?search=nature
+```
+
+Search state is stored in the URL, making the current gallery state:
+
+* Shareable
+* Bookmarkable
+* Refreshable
+* Compatible with browser Back/Forward navigation
+
+## Photographer Filter
+
+Users can filter artworks by photographer.
+
+Example:
+
+```text
+/gallery?photographer=Alex%20Green
+```
+
+The photographer value is normalized before comparison to provide consistent filtering.
+
+## Sorting
+
+The gallery supports sorting by:
+
+```text
+Title
+Year
+Photographer
+```
+
+Example:
+
+```text
+/gallery?sort=Year
+```
+
+Search, filtering, and sorting can be combined:
+
+```text
+/gallery?search=nature&photographer=Alex%20Green&sort=Year
+```
+
+### Data Flow
+
+```text
+Gallery Data
+     │
+     ▼
+Photographer Filter
+     │
+     ▼
+Search Filter
+     │
+     ▼
+Sorting
+     │
+     ▼
+Rendered Results
+```
+
+## URL State
+
+The URL acts as the source of truth for gallery search, filtering, and sorting.
+
+For example:
+
+```text
+/gallery?search=mountain&sort=Title
+```
+
+This allows users to:
+
+* Refresh the page without losing the current state
+* Copy and share the current URL
+* Bookmark a filtered gallery
+* Navigate using browser Back/Forward
+
+## Navigation
+
+The project uses Next.js App Router navigation.
+
+The browser history allows users to move between the gallery and artwork details:
+
+```text
+Gallery
+   │
+   ▼
+Artwork Details
+   │
+   ▼
+Back
+   │
+   ▼
+Gallery
+```
+
+Query parameters are preserved
