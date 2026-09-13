@@ -1,28 +1,32 @@
-
+"use client";
+import { useRouter, useSearchParams } from "next/navigation";
 const sortOptions = ["Title", "Year", "Photographer"];
-
-const SortOptions = ({
-  sort = ""
-}) => {
+const SortOptions = ({ sort = "" }) => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const handleSort = (value: string) => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("sort", value);
+    router.replace(`?${params.toString()}`, { scroll: false });
+  };
   return (
     <div className="flex items-center gap-2">
-      <span className="text-xs text-stone-400 font-medium tracking-wide uppercase">
-        Sort:
-      </span>
+      {" "}
+      <span className="text-xs font-medium uppercase tracking-wide text-stone-400">
+        {" "}
+        Sort:{" "}
+      </span>{" "}
       {sortOptions.map((s) => (
         <button
           key={s}
-          className={`text-xs px-2 py-1 rounded transition-all ${
-            sort === s
-              ? "text-stone-900 font-semibold"
-              : "text-stone-400 hover:text-stone-700"
-          }`}
+          onClick={() => handleSort(s)}
+          className={`rounded px-2 py-1 text-xs transition-all ${sort === s ? "font-semibold text-stone-900" : "text-stone-400 hover:text-stone-700"} cursor-pointer`}
         >
-          {s}
+          {" "}
+          {s}{" "}
         </button>
-      ))}
+      ))}{" "}
     </div>
   );
 };
-
 export default SortOptions;

@@ -6,7 +6,7 @@ export const sortFilterResults = async ({
 }: any) => {
   const { search, sort } = searchQueries;
 
-  return galleryData.filter((galleryImage: any) => {
+  const filteredResults = galleryData.filter((galleryImage: any) => {
     if (photographer) {
       const formattedQuery = formatSearchQuery(photographer);
       const currPhotographer = formatSearchQuery(galleryImage.photographer);
@@ -16,6 +16,7 @@ export const sortFilterResults = async ({
 
     if (search?.length) {
       let matchFound = false;
+
       const searchFields = [
         "title",
         "longDiscription",
@@ -23,22 +24,44 @@ export const sortFilterResults = async ({
         "miniDiscription",
         "photographer",
       ];
+
       let searchIndex = 0;
 
       while (!matchFound && searchIndex < searchFields.length) {
         const field = searchFields[searchIndex];
+
         if (galleryImage[field].toLowerCase().includes(search.toLowerCase())) {
           matchFound = true;
-
           break;
         }
 
         searchIndex++;
       }
+
       return matchFound;
     }
 
     return true;
+  });
+
+  if (!sort) {
+    return filteredResults;
+  }
+
+  return filteredResults.sort((a: any, b: any) => {
+    switch (sort) {
+      case "Title":
+        return a.title.localeCompare(b.title);
+
+      case "Year":
+        return Number(a.year) - Number(b.year);
+
+      case "Photographer":
+        return a.photographer.localeCompare(b.photographer);
+
+      default:
+        return 0;
+    }
   });
 };
 
@@ -51,8 +74,8 @@ export const formatDateTime = (dateString: any) => {
   return new Date(dateString).toDateString();
 };
 
-export function getInitials(nameString : any) {
-  return nameString.split(" ").reduce((acc : any , curr : any) =>{
-    return  acc + curr[0].toUpperCase()
-  }, "")
+export function getInitials(nameString: any) {
+  return nameString.split(" ").reduce((acc: any, curr: any) => {
+    return acc + curr[0].toUpperCase();
+  }, "");
 }
