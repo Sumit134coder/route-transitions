@@ -1,16 +1,26 @@
 import { PHOTOGRAPHERS } from "@/lib/constants/footer";
-import { galleryData } from "@/lib/constants/data";
 import SortOptions from "@/components/UI/SortOptions";
 import PhotographerFilter from "@/components/UI/PhotographerFilter";
 import GalleryImageCard from "@/components/UI/GalleryImageCard";
+import SearchInput from "@/components/inputs/SearchInput";
+import { sortFilterResults } from "@/lib/helpers";
 
-export default function Home() {
+export default async function Home({ params , searchParams } : any) {
+
+  const searchQueries = await searchParams;
+
+  const filteredResults =  sortFilterResults({ searchQueries });
+
   return (
     <div className="min-h-screen bg-background pt-14">
       {/* Controls */}
       <div className="max-w-6xl mx-auto px-6 py-6 flex flex-wrap items-center justify-between gap-4 border-b border-stone-100">
         {/* Photographer filter */}
+        <div className="flex flex-wrap items-center gap-4">
+        <SearchInput />
         <PhotographerFilter />
+
+        </div>
 
         {/* Sort */}
         <SortOptions />
@@ -19,7 +29,7 @@ export default function Home() {
       {/* Masonry-style grid */}
       <div className="max-w-6xl mx-auto px-6 py-8">
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-          {galleryData.map((photo, i) => (
+          {filteredResults.map((photo, i) => (
             <GalleryImageCard galleryImage={photo} path={i} key={i} />
           ))}
         </div>

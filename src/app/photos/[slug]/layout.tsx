@@ -14,7 +14,6 @@ const PhotoDetailsLayout = async ({ children, params }: any) => {
         <BackToGallery />
         <div className="flex-1 flex flex-col items-center justify-center px-6 pb-6">
           {children}
-          <DotNavigation activeIndex={slug}  />
         </div>
       </div>
     </div>
