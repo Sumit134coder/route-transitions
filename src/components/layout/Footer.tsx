@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { FooterLinks } from "@/types/footer";
-import { FOOTER_LINKS , SOCIAL_LINKS , PHOTOGRAPHERS } from "@/lib/constants/footer";
+import {
+  FOOTER_LINKS,
+  SOCIAL_LINKS,
+} from "@/lib/constants/footer";
+import { formatSearchQuery } from "@/lib/helpers";
+import { PHOTOGRAPHERS } from "@/lib/constants/data";
 
 export default function FramesFooter() {
   return (
@@ -27,9 +32,7 @@ export default function FramesFooter() {
                 className="flex-1 h-[34px] px-2.5 text-[13px] bg-white text-stone-900 border border-stone-200 rounded-md"
                 style={{ fontFamily: "inherit" }}
               />
-              <button
-                className="h-[34px] px-3 bg-secondary text-secondary-foreground text-[13px] font-medium rounded-md border-none cursor-pointer hover:opacity-85 transition-opacity whitespace-nowrap"
-              >
+              <button className="h-[34px] px-3 bg-secondary text-secondary-foreground text-[13px] font-medium rounded-md border-none cursor-pointer hover:opacity-85 transition-opacity whitespace-nowrap">
                 Subscribe
               </button>
             </div>
@@ -39,19 +42,26 @@ export default function FramesFooter() {
               className="flex flex-wrap gap-2"
               aria-label="Featured photographers"
             >
-              {PHOTOGRAPHERS.map((p) => (
-                <button
-                  key={p.name}
-                  className="flex items-center gap-1.5 pl-1.5 pr-2.5 py-1 bg-secondary-foreground border border-border rounded-full cursor-pointer hover:border-accent transition-colors"
-                >
-                  <span
-                    className={`w-5 h-5 rounded-full flex items-center justify-center ${p.className} text-white text-[9px] font-semibold flex-shrink-0`}
-                  >
-                    {p.initials}
-                  </span>
-                  <span className="text-[12px] text-secondary">{p.name}</span>
-                </button>
-              ))}
+                {PHOTOGRAPHERS.map((person) => {
+                  const hrefSlug = formatSearchQuery(person.name);
+
+                  return (
+                    <Link
+                      key={person.initials}
+                      href={`/collections/${hrefSlug}`}
+                      className={`flex items-center gap-1.5 px-3 py-1 bg-secondary-foreground border  rounded-full cursor-pointer border-border hover:border-accent transition-colors`}
+                    >
+                      <span
+                        className={`rounded-full  text-[9px] font-semibold ${person.className} w-5 h-5 flex items-center justify-center flex-shrink-0 text-white  `}
+                      >
+                        {person.initials}
+                      </span>
+                      <span className="text-[12px] text-secondary">
+                        {person.name}
+                      </span>
+                    </Link>
+                  );
+                })}
             </div>
           </div>
 

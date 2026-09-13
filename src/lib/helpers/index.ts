@@ -51,7 +51,7 @@ export const formatDateTime = (dateString: any) => {
   return new Date(dateString).toDateString();
 };
 
-export const getInitials = (nameString : any) => {
+export function getInitials(nameString : any) {
   return nameString.split(" ").reduce((acc : any , curr : any) =>{
     return  acc + curr[0].toUpperCase()
   }, "")
