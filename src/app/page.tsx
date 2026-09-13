@@ -4,27 +4,36 @@ import PhotographerFilter from "@/components/UI/PhotographerFilter";
 import GalleryImageCard from "@/components/UI/GalleryImageCard";
 import SearchInput from "@/components/inputs/SearchInput";
 import { sortFilterResults } from "@/lib/helpers";
+import PhotosCount from "@/components/UI/PhotosCount";
 
-export default async function Home({ params , searchParams } : any) {
+export const metadata = {
+  title: "Art Gallery | Discover Inspiring Art & Photography",
+  description:
+    "Explore a curated collection of inspiring artwork and photography from talented artists and photographers around the world.",
+};
 
+export default async function Home({ searchParams }: any) {
   const searchQueries = await searchParams;
 
-  const filteredResults =  sortFilterResults({ searchQueries });
+  const filteredResults = await sortFilterResults({ searchQueries });
 
   return (
     <div className="min-h-screen bg-background pt-14">
       {/* Controls */}
-      <div className="max-w-6xl mx-auto px-6 py-6 flex flex-wrap items-center justify-between gap-4 border-b border-stone-100">
+      <div className="max-w-6xl mx-auto px-6 py-6 ">
+        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-stone-100">
         {/* Photographer filter */}
         <div className="flex flex-wrap items-center gap-4">
-        <SearchInput />
-        <PhotographerFilter />
-
+          <SearchInput />
+          <PhotographerFilter />
         </div>
 
         {/* Sort */}
         <SortOptions />
+        </div>
+      <PhotosCount count={filteredResults.length} />
       </div>
+
 
       {/* Masonry-style grid */}
       <div className="max-w-6xl mx-auto px-6 py-8">
@@ -34,11 +43,11 @@ export default async function Home({ params , searchParams } : any) {
           ))}
         </div>
 
-        {/* {sorted.length === 0 && (
-          <div className="py-24 text-center text-stone-400 text-sm">
+        {filteredResults.length == 0 && (
+          <div className="py-24 text-center text-muted text-sm">
             No photos for this photographer yet.
           </div>
-        )} */}
+        )}
       </div>
     </div>
   );

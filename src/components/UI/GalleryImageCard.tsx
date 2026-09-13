@@ -1,3 +1,4 @@
+import { formatDateTime } from "@/lib/helpers";
 import Image from "next/image";
 import Link from "next/link";
 import { ViewTransition } from "react";
@@ -26,7 +27,7 @@ const GalleryImageCard = ({ galleryImage , path }: any) => {
                   {galleryImage.title}
                 </p>
                 <p className="text-background text-xs mt-0.5">
-                  {galleryImage.photographer} · {galleryImage.date}
+                  {galleryImage.photographer} · {formatDateTime(galleryImage.date)}
                 </p>
               </div>
             </div>

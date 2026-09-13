@@ -1,7 +1,6 @@
 import { galleryData } from "../constants/data";
 
-export const sortFilterResults = ({ searchQueries }: any) => {
-  console.log(searchQueries);
+export const sortFilterResults = async({ searchQueries }: any) => {
   const { search, sort } = searchQueries;
 
   return galleryData.filter((galleryImage: any) => {
@@ -32,3 +31,7 @@ export const sortFilterResults = ({ searchQueries }: any) => {
     return true;
   });
 };
+
+export const formatDateTime = (dateString : any) => {
+  return new Date(dateString).toDateString();
+}
