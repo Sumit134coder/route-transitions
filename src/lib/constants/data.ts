@@ -1,5 +1,6 @@
 import { GalleryImage } from "@/types/gallery";
 
+
 const galleryData: GalleryImage[] = [
   {
     "imgSrc": "https://images.unsplash.com/photo-1500534623283-312aade485b7",
@@ -12,7 +13,7 @@ const galleryData: GalleryImage[] = [
   },
   {
     "imgSrc": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-    "photographer": "Sarah Miller",
+    "photographer": "Emily Stone",
     "date": "2026-01-18",
     "title": "Endless Blue",
     "miniDiscription": "Turquoise water meets a quiet tropical beach.",
@@ -30,7 +31,7 @@ const galleryData: GalleryImage[] = [
   },
   {
     "imgSrc": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b",
-    "photographer": "Emily Stone",
+    "photographer": "Michael Brooks",
     "date": "2026-02-09",
     "title": "Mountain Giants",
     "miniDiscription": "Snow-covered peaks beneath a clear sky.",
@@ -39,7 +40,7 @@ const galleryData: GalleryImage[] = [
   },
   {
     "imgSrc": "https://images.unsplash.com/photo-1511497584788-876760111969",
-    "photographer": "Michael Brooks",
+    "photographer": "Alex Green",
     "date": "2026-02-14",
     "title": "Forest Light",
     "miniDiscription": "Sunlight filtering through a dense forest.",
@@ -48,7 +49,7 @@ const galleryData: GalleryImage[] = [
   },
   {
     "imgSrc": "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
-    "photographer": "Olivia James",
+    "photographer": "Emily Stone",
     "date": "2026-02-21",
     "title": "Silent Lake",
     "miniDiscription": "A calm lake reflecting surrounding mountains.",
@@ -57,7 +58,7 @@ const galleryData: GalleryImage[] = [
   },
   {
     "imgSrc": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
-    "photographer": "Noah Wilson",
+    "photographer": "Daniel Carter",
     "date": "2026-03-01",
     "title": "Desert Journey",
     "miniDiscription": "A lone path crossing golden desert dunes.",
@@ -66,7 +67,7 @@ const galleryData: GalleryImage[] = [
   },
   {
     "imgSrc": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e",
-    "photographer": "Sophia Clark",
+    "photographer": "Michael Brooks",
     "date": "2026-03-07",
     "title": "Into the Woods",
     "miniDiscription": "A narrow trail disappearing into a forest.",
@@ -75,7 +76,7 @@ const galleryData: GalleryImage[] = [
   },
   {
     "imgSrc": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429",
-    "photographer": "James Anderson",
+    "photographer": "Alex Green",
     "date": "2026-03-15",
     "title": "Open Country",
     "miniDiscription": "Rolling hills beneath a dramatic sky.",
@@ -84,7 +85,7 @@ const galleryData: GalleryImage[] = [
   },
   {
     "imgSrc": "https://images.unsplash.com/photo-1493246507139-91e8fad9978e",
-    "photographer": "Emma Taylor",
+    "photographer": "Emily Stone",
     "date": "2026-03-22",
     "title": "Mountain Forest",
     "miniDiscription": "A dense forest beneath towering mountains.",
@@ -93,7 +94,7 @@ const galleryData: GalleryImage[] = [
   },
   {
     "imgSrc": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
-    "photographer": "William Harris",
+    "photographer": "Daniel Carter",
     "date": "2026-04-02",
     "title": "Golden Horizon",
     "miniDiscription": "Warm evening light over an open landscape.",
@@ -102,7 +103,7 @@ const galleryData: GalleryImage[] = [
   },
   {
     "imgSrc": "https://images.unsplash.com/photo-1501854140801-50d01698950b",
-    "photographer": "Grace Martin",
+    "photographer": "Michael Brooks",
     "date": "2026-04-10",
     "title": "Aerial Wilderness",
     "miniDiscription": "Aerial view of a vast green landscape.",
@@ -111,7 +112,7 @@ const galleryData: GalleryImage[] = [
   },
   {
     "imgSrc": "https://images.unsplash.com/photo-1500534623283-312aade485b7",
-    "photographer": "Henry Davis",
+    "photographer": "Alex Green",
     "date": "2026-04-18",
     "title": "Cloud Valley",
     "miniDiscription": "Clouds resting between distant mountain peaks.",
@@ -120,7 +121,7 @@ const galleryData: GalleryImage[] = [
   },
   {
     "imgSrc": "https://images.unsplash.com/photo-1469474968028-56623f02e42e",
-    "photographer": "Chloe Wilson",
+    "photographer": "Emily Stone",
     "date": "2026-04-25",
     "title": "Wild Coast",
     "miniDiscription": "Rocky coastline meeting deep blue ocean.",
@@ -129,7 +130,7 @@ const galleryData: GalleryImage[] = [
   },
   {
     "imgSrc": "https://images.unsplash.com/photo-1472396961693-142e6e269027",
-    "photographer": "Lucas Thompson",
+    "photographer": "Daniel Carter",
     "date": "2026-05-03",
     "title": "Wild Encounter",
     "miniDiscription": "Wildlife captured in its natural surroundings.",
@@ -138,7 +139,7 @@ const galleryData: GalleryImage[] = [
   },
   {
     "imgSrc": "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07",
-    "photographer": "Mia Robinson",
+    "photographer": "Michael Brooks",
     "date": "2026-05-09",
     "title": "Colorful Meadow",
     "miniDiscription": "Wildflowers covering a bright summer meadow.",
@@ -147,7 +148,7 @@ const galleryData: GalleryImage[] = [
   },
   {
     "imgSrc": "https://images.unsplash.com/photo-1519681393784-d120267933ba",
-    "photographer": "Ethan Walker",
+    "photographer": "Alex Green",
     "date": "2026-05-17",
     "title": "Winter Peak",
     "miniDiscription": "A snow-covered mountain under a starry sky.",
@@ -156,7 +157,7 @@ const galleryData: GalleryImage[] = [
   },
   {
     "imgSrc": "https://images.unsplash.com/photo-1500534623283-312aade485b7",
-    "photographer": "Ava Thompson",
+    "photographer": "Emily Stone",
     "date": "2026-05-24",
     "title": "Morning Escape",
     "miniDiscription": "Soft morning light over a peaceful valley.",
@@ -165,7 +166,7 @@ const galleryData: GalleryImage[] = [
   },
   {
     "imgSrc": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-    "photographer": "Benjamin Lewis",
+    "photographer": "Daniel Carter",
     "date": "2026-06-01",
     "title": "Tropical Calm",
     "miniDiscription": "Palm trees overlooking a quiet ocean.",
@@ -174,7 +175,7 @@ const galleryData: GalleryImage[] = [
   },
   {
     "imgSrc": "https://images.unsplash.com/photo-1472214103451-9374bd1c798e",
-    "photographer": "Ella Walker",
+    "photographer": "Michael Brooks",
     "date": "2026-06-08",
     "title": "Green Hills",
     "miniDiscription": "Fresh green hills beneath scattered clouds.",
@@ -183,7 +184,7 @@ const galleryData: GalleryImage[] = [
   },
   {
     "imgSrc": "https://images.unsplash.com/photo-1464278533981-50106e6176b1",
-    "photographer": "Jack Hall",
+    "photographer": "Alex Green",
     "date": "2026-06-15",
     "title": "Northern Lights",
     "miniDiscription": "Aurora lights dancing across the night sky.",
@@ -192,7 +193,7 @@ const galleryData: GalleryImage[] = [
   },
   {
     "imgSrc": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429",
-    "photographer": "Isabella Young",
+    "photographer": "Emily Stone",
     "date": "2026-06-22",
     "title": "Countryside Road",
     "miniDiscription": "A quiet road passing through open countryside.",
@@ -201,7 +202,7 @@ const galleryData: GalleryImage[] = [
   },
   {
     "imgSrc": "https://images.unsplash.com/photo-1494783367193-149034c05e8f",
-    "photographer": "Samuel King",
+    "photographer": "Daniel Carter",
     "date": "2026-07-01",
     "title": "Coastal Road",
     "miniDiscription": "A winding road overlooking the sea.",
@@ -210,7 +211,7 @@ const galleryData: GalleryImage[] = [
   },
   {
     "imgSrc": "https://images.unsplash.com/photo-1448375240586-882707db888b",
-    "photographer": "Lily Wright",
+    "photographer": "Michael Brooks",
     "date": "2026-07-08",
     "title": "Forest Morning",
     "miniDiscription": "A quiet forest illuminated by morning light.",
@@ -219,7 +220,7 @@ const galleryData: GalleryImage[] = [
   },
   {
     "imgSrc": "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86",
-    "photographer": "Daniel Wright",
+    "photographer": "Alex Green",
     "date": "2026-07-15",
     "title": "Ancient Trees",
     "miniDiscription": "Massive trees standing together in a quiet forest.",
@@ -228,7 +229,7 @@ const galleryData: GalleryImage[] = [
   },
   {
     "imgSrc": "https://images.unsplash.com/photo-1500534623283-312aade485b7",
-    "photographer": "Charlotte Evans",
+    "photographer": "Emily Stone",
     "date": "2026-07-21",
     "title": "Valley Sunrise",
     "miniDiscription": "The first light reaching a mountain valley.",
@@ -237,7 +238,7 @@ const galleryData: GalleryImage[] = [
   },
   {
     "imgSrc": "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8",
-    "photographer": "Matthew Scott",
+    "photographer": "Daniel Carter",
     "date": "2026-07-28",
     "title": "Golden Morning",
     "miniDiscription": "Sunrise casting golden light across a field.",
@@ -246,7 +247,7 @@ const galleryData: GalleryImage[] = [
   },
   {
     "imgSrc": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
-    "photographer": "Amelia Moore",
+    "photographer": "Michael Brooks",
     "date": "2026-08-05",
     "title": "Open Horizon",
     "miniDiscription": "A wide landscape stretching toward the horizon.",
@@ -255,15 +256,20 @@ const galleryData: GalleryImage[] = [
   },
   {
     "imgSrc": "https://images.unsplash.com/photo-1500534623283-312aade485b7",
-    "photographer": "Christopher Brown",
+    "photographer": "Alex Green",
     "date": "2026-08-12",
     "title": "After the Rain",
     "miniDiscription": "Fresh mountain scenery following rainfall.",
     "longDiscription": "Fresh rain leaves the landscape vibrant and clear, while low clouds move slowly across the surrounding mountains.",
     "place": "Meghalaya, India"
   }
-]
+];
+
+
+
+
+const PHOTOGRAPHERS = [...new Set(galleryData.map((galleryImage) => galleryImage.photographer))];
 
 export {
-  galleryData
+  galleryData , PHOTOGRAPHERS
 }
